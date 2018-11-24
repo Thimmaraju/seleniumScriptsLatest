@@ -1,5 +1,7 @@
 package com.selenium;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,11 +18,11 @@ public class HowToEnterDataInMultipleTextBox {
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 		
 		// Create Object of driver.
 		driver = new ChromeDriver();
-		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		// Navigate to site
 		driver.get("https://www.facebook.com/");
 		// Enter data to email

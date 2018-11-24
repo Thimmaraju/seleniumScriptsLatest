@@ -10,29 +10,34 @@ import org.testng.annotations.Test;
 public class DoMouseOverAndClickOnLink {
 
 	WebDriver driver;
-	
+
 	@Test
-	public void enterText(){
-		
+	public void enterText() {
+
 		// First step set the driver location
 		// For Window user
-		// System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
-		
-		System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
-		
+		// System.setProperty("webdriver.chrome.driver",
+		// "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
+
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
+		// System.setProperty("webdriver.chrome.driver",
+		// "C:\\\\Users\\\\Raju\\\\git\\\\seleniumScriptsLatest\\\\drivers\\\\chromedriver.exe");
+
 		// Create Object of driver.
 		driver = new ChromeDriver();
-		
+
 		// Navigate to site
 		driver.get("https://www.actitime.com/download");
 		WebElement features = driver.findElement(By.xpath("/html/body/header/div/nav/ul/li[2]/a"));
 		
-		// Create Object of Action Class 
+		// Create Object of Action Class
 		Actions action = new Actions(driver);
-		
+		// Actions action = new Actions(driver);
+
 		// Move to element for which you want mouse Over
 		action.moveToElement(features).build().perform();
-		
+
 		// Just sleep for 1 second to make sure mouse over is successful.
 		try {
 			Thread.sleep(1000);
@@ -40,7 +45,13 @@ public class DoMouseOverAndClickOnLink {
 			e.printStackTrace();
 		}
 		// Click on link
-		driver.findElement(By.linkText("Work Scope Management")).click();
+		driver.findElement(By.linkText("Reports and Data Analysis")).click();
+		// Mousehover on clients
+		WebElement clients = driver.findElement(By.linkText("Clients"));
+
+		action.moveToElement(clients).build().perform();
 		
+		driver.findElement(By.linkText("Consulting")).click();
+
 	}
 }

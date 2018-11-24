@@ -10,7 +10,7 @@ public class HowToHandelCalendarInSelenium {
 
 	WebDriver driver;
 	
-	String month = "November 2018";
+	String month = "December 2018";
 	String date = "21";
 	
 	@Test
@@ -20,7 +20,7 @@ public class HowToHandelCalendarInSelenium {
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 				
 		driver = new ChromeDriver();
 		
@@ -28,7 +28,7 @@ public class HowToHandelCalendarInSelenium {
 		driver.get("http://www.phptravels.net/");
 		
 		// click on calendar
-		driver.findElement(By.xpath("//*[@id='dpd1']/input")).click();
+		driver.findElement(By.xpath("//*[@id=\"dpd1\"]/div/input")).click();
 		
 		// get web element of month
 		WebElement mon = driver.findElement(By.xpath("//div[@class='datepicker dropdown-menu'][1]/div[1]/table/thead/tr[1]/th[2]"));

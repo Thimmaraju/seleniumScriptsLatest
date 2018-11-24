@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
@@ -13,18 +14,23 @@ public class HowToWorkWithMultipleWindows {
 	WebDriver driver;
 	
 	@Test
-	public void enterText(){
+	public void enterText() throws InterruptedException{
 		
 		// First step set the driver location
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
 				
 		driver = new ChromeDriver();
 		
 		driver.get("http://automationpractice.com/index.php");
+		driver.manage().window().maximize();
 		
+		JavascriptExecutor webdriver = (JavascriptExecutor) driver;
+		webdriver.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//*[@id='social_block']/ul/li[3]/a")));
+		Thread.sleep(7000);
 		// click on youtube link
 		driver.findElement(By.xpath("//*[@id='social_block']/ul/li[3]/a")).click();
 		
@@ -53,7 +59,11 @@ public class HowToWorkWithMultipleWindows {
 		// Switch to parent application window 
 		// Without switching to parent window, we can not work on parent window object
 		driver.switchTo().window(parentId);
+		Thread.sleep(7000);
 		
+	
+		webdriver.executeScript("arguments[0].scrollIntoView(true);",driver.findElement(By.xpath("//*[@id='footer']/div/section[2]/div/div/ul/li/a")));
+		Thread.sleep(7000);
 		// Click on women link
 		driver.findElement(By.xpath("//*[@id='footer']/div/section[2]/div/div/ul/li/a")).click();
 		

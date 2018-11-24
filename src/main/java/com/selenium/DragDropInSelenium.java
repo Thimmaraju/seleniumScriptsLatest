@@ -20,12 +20,14 @@ public class DragDropInSelenium {
 		// First step set the driver location
 		//For Window user
 		//System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 		// Create Object of driver.
 		driver = new ChromeDriver();
+		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://jqueryui.com/droppable/");
 		Thread.sleep(7000);
+		driver.manage().window().maximize();
 		//driver.navigate().refresh();
 		//Thread.sleep(5000);
 		driver.switchTo().frame(driver.findElement(By.xpath("//*[@id='content']/iframe")));

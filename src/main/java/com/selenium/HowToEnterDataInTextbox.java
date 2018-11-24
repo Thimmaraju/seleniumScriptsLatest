@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.logging.Level;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.logging.LogEntries;
@@ -20,6 +19,7 @@ public class HowToEnterDataInTextbox {
 	// Create instance of web driver
 	WebDriver driver;
 
+	@SuppressWarnings("deprecation")
 	@Test
 	public void enterDataInTextField() {
 
@@ -29,7 +29,7 @@ public class HowToEnterDataInTextbox {
 		// "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 
 		System.setProperty("webdriver.chrome.driver",
-				"/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+				"C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 
 		DesiredCapabilities caps = DesiredCapabilities.chrome();
 		LoggingPreferences logPrefs = new LoggingPreferences();

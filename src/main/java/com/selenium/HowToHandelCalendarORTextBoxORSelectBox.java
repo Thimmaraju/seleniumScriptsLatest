@@ -12,9 +12,9 @@ import org.testng.annotations.Test;
 public class HowToHandelCalendarORTextBoxORSelectBox {
 	
 	WebDriver driver;
-	String month = "November 2018";
+	String month = "December 2018";
 	String checkMonth = "December 2018";
-	String date = "21";
+	String date = "29";
 	
 	@Test
 	public void enterText() throws InterruptedException{
@@ -23,16 +23,18 @@ public class HowToHandelCalendarORTextBoxORSelectBox {
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 		// create driver object	
 		driver = new ChromeDriver();
 		// navigate to site
 		driver.get("http://www.phptravels.net/");
+		driver.manage().window().maximize();
 		// click on location text box
-		driver.findElement(By.xpath("//*[@id='s2id_autogen10']/a/span[1]")).click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("//*[@id=\"s2id_autogen8\"]/a/span[1]")).click();
+		
 		// enter block text then matching text will show as list
-		driver.findElement(By.xpath("//*[@id='select2-drop']/div/input")).sendKeys("Block");
+		driver.findElement(By.xpath("//*[@id=\"select2-drop\"]/div/input")).sendKeys("Block");
 		// waiting for 5 seconds to make sure list is loaded
 		Thread.sleep(5000);
 		List<WebElement> data = driver.findElements(By.xpath("//ul[@class='select2-result-sub']/li"));
@@ -48,7 +50,7 @@ public class HowToHandelCalendarORTextBoxORSelectBox {
 			}	
 		}
 		// Click on Calendar
-		driver.findElement(By.xpath("//*[@id='dpd1']/input")).click();
+		driver.findElement(By.xpath("//*[@id=\"dpd1\"]/div/input")).click();
 		// get web element of month in Calendar
 		WebElement mon = driver.findElement(By.xpath("//div[@class='datepicker dropdown-menu'][1]/div[1]/table/thead/tr[1]/th[2]"));
 		while(true){
@@ -82,6 +84,10 @@ public class HowToHandelCalendarORTextBoxORSelectBox {
 		
 		// to select data from select box make object of select class
 		Select select = new Select(driver.findElement(By.xpath("//*[@id='adults']")));
+		driver.findElement(By.xpath("//*[@id=\"adultInput\"]")).sendKeys("4");
+		
+		
+		
 		// it will select three adults
 		select.selectByVisibleText("3");
 		

@@ -18,7 +18,7 @@ public class HowToSelectDataFromSelectbox {
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 		
 		// Create Object of driver.
 		driver = new ChromeDriver();
@@ -30,15 +30,19 @@ public class HowToSelectDataFromSelectbox {
 		
 		// To work with select box we need to create object of select class
 		Select select = new Select(day);
-		select.selectByValue("10");
+		select.selectByIndex(30);
 		
 		WebElement month = driver.findElement(By.xpath("//*[@id='month']"));
 		select = new Select(month);
-		select.selectByIndex(3);
+		select.selectByIndex(10);
 		
 		WebElement year = driver.findElement(By.xpath("//*[@id='year']"));
 		select = new Select(year);
-		select.selectByVisibleText("2016");
+		select.selectByVisibleText("1991");
+		
+		WebElement maleradio = driver.findElement(By.xpath("//*[@id=\"u_0_a\"]"));
+		
+		maleradio.click();
 		
 	}
 }
