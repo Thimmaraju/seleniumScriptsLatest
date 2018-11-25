@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.selenium.HowToVerifyCheckboxIsCheckedOrNot">
+      <class name="com.selenium.KeyboardAndMouseEventUsingActionClassInSelenium">
         <methods>
-          <include name="enterText"/>
+          <include name="keyboardAndMouseEventUsingActionClassInSelenium"/>
         </methods>
-      </class> <!-- com.selenium.HowToVerifyCheckboxIsCheckedOrNot -->
+      </class> <!-- com.selenium.KeyboardAndMouseEventUsingActionClassInSelenium -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

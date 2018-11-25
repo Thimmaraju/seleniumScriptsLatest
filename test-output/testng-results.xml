@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48514" started-at="2018-11-24T17:08:21Z" finished-at="2018-11-24T17:09:09Z">
+  <suite name="Default suite" duration-ms="29532" started-at="2018-11-25T02:26:12Z" finished-at="2018-11-25T02:26:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="48514" started-at="2018-11-24T17:08:21Z" finished-at="2018-11-24T17:09:09Z">
-      <class name="com.selenium.HowToVerifyCheckboxIsCheckedOrNot">
-        <test-method status="PASS" signature="enterText()[pri:0, instance:com.selenium.HowToVerifyCheckboxIsCheckedOrNot@6f7fd0e6]" name="enterText" duration-ms="48392" started-at="2018-11-24T17:08:21Z" finished-at="2018-11-24T17:09:09Z">
+    <test name="Default test" duration-ms="29532" started-at="2018-11-25T02:26:12Z" finished-at="2018-11-25T02:26:42Z">
+      <class name="com.selenium.RadioButtonAndAutoSuggestionTextBoxInSelenium">
+        <test-method status="PASS" signature="enterText()[pri:0, instance:com.selenium.RadioButtonAndAutoSuggestionTextBoxInSelenium@6f7fd0e6]" name="enterText" duration-ms="29493" started-at="2018-11-25T02:26:12Z" finished-at="2018-11-25T02:26:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterText -->
-      </class> <!-- com.selenium.HowToVerifyCheckboxIsCheckedOrNot -->
+      </class> <!-- com.selenium.RadioButtonAndAutoSuggestionTextBoxInSelenium -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

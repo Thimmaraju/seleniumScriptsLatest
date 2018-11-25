@@ -23,7 +23,7 @@ public class KeyboardAndMouseEventUsingActionClassInSelenium {
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver","/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 
-		System.setProperty("webdriver.chrome.driver","/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 
 		// Create Object of driver.
 		driver = new ChromeDriver();
@@ -32,9 +32,11 @@ public class KeyboardAndMouseEventUsingActionClassInSelenium {
 		WebElement text = driver.findElement(By.name("q"));
 		Actions action = new Actions(driver);
 		Action action1 = action.keyDown(text, Keys.SHIFT)
-		.sendKeys("Bhanu Pratap")
+		.sendKeys("Thimmaraju govindappa gari")
 		.keyUp(text,Keys.SHIFT).build();
 		action1.perform();
+		action.sendKeys(Keys.ENTER).build().perform();
+		//driver.findElement(By.id("idValue")).sendKeys(Keys.ENTER);
 
 	}
 }

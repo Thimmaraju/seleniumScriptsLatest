@@ -18,7 +18,7 @@ public class iFrameInselenium {
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 		
 		// Create Object of driver.
 		driver = new ChromeDriver();
@@ -27,23 +27,24 @@ public class iFrameInselenium {
 		// or elements if they are not immediately available.
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-		driver.get("file:///Users/bsingh5/Downloads/startbootstrap-sb-admin-2-gh-pages/pages/forms.html");
+		driver.get("file:///C:/startbootstrap-sb-admin-2-gh-pages/startbootstrap-sb-admin-2-gh-pages/pages/forms.html");
 		// switch frame based on index
-		driver.switchTo().frame(0);
+		//driver.switchTo().frame(0);
 		// switch frame based on frame name
-		driver.switchTo().frame("nameOfIframe");
+		//driver.switchTo().frame("nameOfIframe");
 		// switch frame based on web element
-		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@src='frame.html']")));
+		driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/div[2]/div/div/div[2]/div/div[2]/iframe")));
 		// when you have frame within frame
-		driver.switchTo().frame(0).switchTo().frame(2);
-		driver.switchTo().frame("nameOfIframe").switchTo().frame("name");
+		//driver.switchTo().frame(0).switchTo().frame(2);
+		//driver.switchTo().frame("nameOfIframe").switchTo().frame("name");
 		// when you have frame within frame
-		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@src='frame.html']"))).switchTo().frame("name");
+		//driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@src='frame.html']"))).switchTo().frame("name");
 		
 		driver.findElement(By.xpath("/html/body/div/form/div/input[1]")).sendKeys("userName");
 		
-		driver.findElements(By.xpath("//input[@name='textbox1']")).get(0).sendKeys("userName");
+		driver.findElements(By.xpath("//*[@id=\"age\"]")).get(0).sendKeys("27");
 		driver.switchTo().defaultContent();
 		
+		driver.findElement(By.xpath("//*[@id=\"page-wrapper\"]/div[2]/div/div/div[2]/div/div[1]/form/div[1]/input[1]")).sendKeys("123455");
 	}
 }

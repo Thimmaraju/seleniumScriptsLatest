@@ -20,7 +20,7 @@ public class JavaScriptExecutorInSelenium {
 		// "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 
 		System.setProperty("webdriver.chrome.driver",
-				"/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+				"C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 
 		// Create Object of driver.
 		driver = new ChromeDriver();
@@ -30,6 +30,8 @@ public class JavaScriptExecutorInSelenium {
 		JavascriptExecutor webdriver = (JavascriptExecutor) driver;
 		webdriver.executeScript("document.getElementById('email').setAttribute('value','text@gmail.com')");
 		webdriver.executeScript("document.getElementById('pass').setAttribute('value','password')");
+		
+		
 		//webdriver.executeScript("arguments[0].click();",driver.findElement(By.xpath("//input[@data-testid='royal_login_button']")));
 
 		// Fetching the Domain Name of the site. Tostring() change object to

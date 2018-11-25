@@ -1,6 +1,5 @@
 package com.selenium;
 
-import java.awt.AWTException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +20,7 @@ public class KeyboardAndMouseEventUsingActionClassInSelenium3 {
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver","/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 
-		System.setProperty("webdriver.chrome.driver","/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 
 		// Create Object of driver.
 		driver = new ChromeDriver();
@@ -30,13 +29,9 @@ public class KeyboardAndMouseEventUsingActionClassInSelenium3 {
 		WebElement link = driver.findElement(By.xpath("//*[@id='menu_projects']/a"));
 		Actions action = new Actions(driver);
 		// for mac
-		action.keyDown(Keys.COMMAND).keyDown(Keys.SHIFT)
-		.click(link).keyUp(Keys.COMMAND)
-		.keyUp(Keys.SHIFT).build().perform();
+		//action.keyDown(Keys.COMMAND).keyDown(Keys.SHIFT).click(link).keyUp(Keys.COMMAND).keyUp(Keys.SHIFT).build().perform();
 		// for window
-		action.keyDown(Keys.CONTROL)
-		.keyDown(Keys.SHIFT).click(link)
-		.keyUp(Keys.CONTROL).keyUp(Keys.SHIFT).build().perform();
+		action.keyDown(Keys.CONTROL).keyDown(Keys.SHIFT).click(link).keyUp(Keys.CONTROL).keyUp(Keys.SHIFT).build().perform();
 		//Thread.sleep(5000);
 	}
 }
