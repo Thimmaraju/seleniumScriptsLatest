@@ -20,7 +20,7 @@ public class VerifyOpenAndCollapse {
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver","/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 
-		System.setProperty("webdriver.chrome.driver","/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 		// Create Object of driver.
 		driver = new ChromeDriver();
 		//Launch the first URL
@@ -28,7 +28,8 @@ public class VerifyOpenAndCollapse {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		// click on What’s NetBanking all about?
-		driver.findElement(By.xpath("//*[@id='accordian1']/h3")).click();
+		driver.findElement(By.xpath("//*[@id='accordian1']/h3")); 
+		//.click();
 		// when we click class name will have active appended
 		String className = driver.findElement(By.xpath("//*[@id='accordian1']/h3")).getAttribute("class");
         System.out.println(className);
@@ -37,7 +38,7 @@ public class VerifyOpenAndCollapse {
         	   Assert.assertTrue(true, "Test verifyRadioButton is PASS");
         }
         else{
-        	 Assert.assertTrue(false, "Test verifyRadioButton is PASS");
+        	 Assert.assertTrue(false, "Test verifyRadioButton is Fail");
         }
 	}
 }

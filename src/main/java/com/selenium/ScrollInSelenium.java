@@ -15,11 +15,13 @@ public class ScrollInSelenium {
 		// For Window user
 		// System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver.exe");
 		
-		System.setProperty("webdriver.chrome.driver", "/Users/bsingh5/Documents/coreJava/selenium/drivers/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raju\\git\\seleniumScriptsLatest\\drivers\\chromedriver.exe");
 		// create driver object	
 		driver = new ChromeDriver();
 		
 		driver.get("https://www.tirerack.com/content/tirerack/desktop/en/homepage.html");
+		
+		driver.findElement(By.xpath("/html/body/div[8]/div/span")).click();
 		
 		// it will go till the end vertically
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
